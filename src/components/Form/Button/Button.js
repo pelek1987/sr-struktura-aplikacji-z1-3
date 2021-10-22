@@ -1,6 +1,6 @@
-import { colorsPalette } from "../../assets/colorsPalette";
+import { colorsPalette } from "assets/colorsPalette";
 
-function Button({ children, label, bgColor = "darkcyan", color = "orange" }) {
+function Button({ children, label, handleClick, bgColor = "darkcyan", color = "orange" }) {
   const styles = {
     margin: 10,
     border: "none",
@@ -11,7 +11,7 @@ function Button({ children, label, bgColor = "darkcyan", color = "orange" }) {
     color: colorsPalette[color] || color
   };
 
-  return <button style={styles}>{label ? label : children}</button>;
+  return <button style={styles} onClick={handleClick}>{label ? label : children}</button>;
 }
 
 export default Button;

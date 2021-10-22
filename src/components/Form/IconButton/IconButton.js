@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import { colorsPalette } from "../../assets/colorsPalette";
+import { colorsPalette } from "assets/colorsPalette";
 
 library.add(fas);
 
-function IconButton({ label, icon, bgColor = "darkcyan", color = "orange" }) {
+function IconButton({ label, icon, handleClick, bgColor = "darkcyan", color = "orange" }) {
   const styles = {
     margin: 10,
     border: "none",
@@ -17,7 +17,7 @@ function IconButton({ label, icon, bgColor = "darkcyan", color = "orange" }) {
   };
 
   return (
-    <button style={styles}>
+    <button style={styles} onClick={handleClick}>
       <FontAwesomeIcon style={{ marginRight: 8 }} icon={icon} />
       {label}
     </button>
